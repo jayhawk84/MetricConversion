@@ -1,0 +1,34 @@
+﻿@model MetricConversion.Models.ConversionEntries
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Results</title>
+</head>
+<body>
+    <h2>Here are the values you provided along with their conversions</h2>
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Miles Entered</th>
+                <th>Converted to km</th>
+                <th>Kilometers Entered</th>
+                <th>Converted to mi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Miles</td>
+                <td>@(Model.Miles *= 1.609) </td>
+                <td>@Model.Kilometers</td>
+                <td>@(Model.Kilometers /= 1.609)</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
